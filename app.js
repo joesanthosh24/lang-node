@@ -21,18 +21,17 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// Courses routes
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/course-new", async (req, res) => {
-  const course = new Course({
-    title: "French I",
-    description: "Introduction French course for beginners",
-  });
-  await course.save();
+app.get("/courses", async (req, res) => {
+  const courses = await Course.find({});
 
-  res.send(course);
+  res.render("courses/index", {
+    courseList: courses,
+  });
 });
 
 app.listen(3000, () => {

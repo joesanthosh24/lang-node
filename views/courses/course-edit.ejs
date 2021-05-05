@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Course</title>
+  </head>
+  <body>
+    <h1>Edit a Course</h1>
+    <form action="/courses/<%= course._id %>?_method=put" method="post">
+      <div>
+        <label for="title">Title: </label>
+        <input
+          id="title"
+          name="course[title]"
+          type="text"
+          value="<%= course.title %>"
+        />
+      </div>
+      <div>
+        <label for="description">Description: </label>
+        <input
+          id="description"
+          name="course[description]"
+          type="text"
+          value="<%= course.description %>"
+        />
+      </div>
+      <div>
+        <label for="price">Price: </label>
+        <input
+          id="price"
+          name="course[price]"
+          type="text"
+          value="<%= course.price %>"
+        />
+      </div>
+      <button type="submit">Edit Course</button>
+    </form>
+    <a href="/courses/<%= course._id %>">Back to Course</a>
+  </body>
+</html>

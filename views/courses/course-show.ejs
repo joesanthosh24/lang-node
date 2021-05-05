@@ -9,6 +9,14 @@
   <body>
     <h1><%= course.title %></h1>
     <h2><%= course.description %></h2>
+    <p>
+      <a href="/courses/<%= course._id %>/edit">Edit</a>
+    </p>
+    <p>
+      <form action="/courses/<%= course._id %>?_method=DELETE" method="post">
+        <button type="submit">Delete Course</button>
+      </form>
+    </p>
     <footer>
       <a href="/courses">All Courses</a>
     </footer>

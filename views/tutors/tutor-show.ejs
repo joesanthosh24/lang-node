@@ -4,21 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course</title>
+    <title>Tutor</title>
   </head>
   <body>
-    <h1><%= course.title %></h1>
-    <h2><%= course.description %></h2>
+    <h1><%= tutor.name %></h1>
+    <h2>Rating: <%= tutor.rating %></h2>
+    <p>Teaches: <%= tutor.language.name %></p>
     <p>
-      <a href="/courses/<%= course._id %>/edit">Edit</a>
-    </p>
-    <p>
-      <form action="/courses/<%= course._id %>?_method=DELETE" method="post">
+      <form action="/tutors/<%= tutor._id %>?_method=DELETE" method="post">
         <button type="submit">Delete Course</button>
       </form>
     </p>
     <footer>
-      <a href="/courses">All Courses</a>
+      <a href="/tutors">All Tutors</a>
     </footer>
   </body>
 </html>

@@ -4,18 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Courses</title>
+    <title>Tutors</title>
   </head>
   <body>
-    <h1>All Courses</h1>
-    <div>
-      <a href="/courses/new">Add Course</a>
-    </div>
+    <h1>All Tutors</h1>
     <ul>
-      <% for (let course of courseList) { %>
+      <% for (let tutor of tutorList) { %>
       <li>
-        <a href="courses/<%= course._id %>"><%= course.title %></a> - <%=
-        course.description %>
+        <a href="tutors/<%= tutor._id %>"><%= tutor.name %></a> -
+        <span><%= tutor.rating %></span>
       </li>
       <% } %>
     </ul>

@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const path = require("path");
 
-const Course = require("./models/course");
+// const Course = require("./models/course");
+const Language = require("./models/language");
+const Tutor = require("./models/tutors");
 
 mongoose.connect("mongodb://localhost:27017/lang", {
   useNewUrlParser: true,
@@ -19,10 +21,10 @@ db.once("open", () => {
 
 const app = express();
 
+app.use("/public", express.static(path.join(__dirname, "public")));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
-app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -33,61 +35,35 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/courses", async (req, res) => {
-  const courses = await Course.find({});
+app.get("/languages", async (req, res) => {
+  const languages = await Language.find({});
+  const languageTutorMap = {};
 
-  res.render("courses/index", {
-    courseList: courses,
+  for (let i = 0; i < languages.length; i++) {}
+
+  res.render("languages/index", {
+    languageList: languages,
   });
 });
 
-app.post("/courses", async (req, res) => {
-  const course = new Course(req.body.course);
+app.get("/tutors", async (req, res) => {
+  const tutors = await Tutor.find({});
 
-  await course.save();
-
-  res.redirect(`/courses/${course._id}`);
+  res.render("tutors/index", {
+    tutorList: tutors,
+  });
 });
 
-app.get("/courses/new", (req, res) => {
-  res.render("courses/course-new");
+app.get("/languages/:id", async (req, res) => {
+  const language = await Language.findById(req.params.id);
+
+  res.render("languages/language-show", { language });
 });
 
-app.get("/courses/:id", async (req, res) => {
-  const course = await Course.findById(req.params.id);
+app.get("/tutors/:id", async (req, res) => {
+  const tutor = await Tutor.findById(req.params.id).populate("language");
 
-  res.render("courses/course-show", { course });
-});
-
-app.get("/courses/:id/edit", async (req, res) => {
-  const course = await Course.findById(req.params.id);
-
-  res.render("courses/course-edit", { course });
-});
-
-app.put("/courses/:id", async (req, res) => {
-  const { id } = req.params;
-  const { title, description, price } = req.body.course;
-
-  const course = await Course.findByIdAndUpdate(
-    id,
-    {
-      title,
-      description,
-      price,
-    },
-    { useFindAndModify: false }
-  );
-
-  res.redirect(`/courses/${course._id}`);
-});
-
-app.delete("/courses/:id", async (req, res) => {
-  const { id } = req.params;
-
-  await Course.findByIdAndRemove(id, { useFindAndModify: false });
-
-  res.redirect("/courses");
+  res.render("tutors/tutor-show", { tutor });
 });
 
 app.listen(3000, () => {

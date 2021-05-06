@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .language-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .flag-img {
+        height: 50px;
+        width: 50px;
+        margin-left: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .language {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(236, 229, 229);
+        width: 500px;
+        margin: 10px;
+      }
+      .language:hover {
+        cursor: pointer;
+      }
+      .language__text {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All Languages</h1>
+    <div class="language-container">
+      <ul>
+        <% for (let language of languageList) { %>
+        <a href="/languages/<%= language._id %>" class="language">
+          <img
+            class="flag-img"
+            src="/public/images/<%= language.flagRoute %>"
+          />
+          <p class="language__text"><%= language.name %></p>
+        </a>
+        <% } %>
+      </ul>
+    </div>
+    <script>
+      function goTolanguage(id) {
+        fetch(`/languages/${id}`);
+      }
+    </script>
+  </body>
+</html>

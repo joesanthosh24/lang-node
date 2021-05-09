@@ -1,12 +1,18 @@
-<%- include('../layouts/header') -%>
+<%- layout("layouts/boilerplate") %>
     <h1>All Tutors</h1>
-    <ul>
+    <div class="tutors__container">
+      <ul>
       <% for (let tutor of tutorList) { %>
       <li>
-        <a href="tutors/<%= tutor._id %>"><%= tutor.name %></a> -
-        Rating: <span><%= tutor.rating %></span>
+          <!-- <%= tutor.name %></a> -
+        Rating: <span><%= tutor.rating %>
+        </span> -->
+        <div class="tutor__container">
+          <a href="tutors/<%= tutor._id %>">
+            <%= tutor.name %>
+          </a>
+        </div>
       </li>
       <% } %>
     </ul>
-  </body>
-</html>
+    </div>

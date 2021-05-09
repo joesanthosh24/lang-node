@@ -1,3 +1,4 @@
+/* Main Elements for all pages */
 * {
   margin: 0;
 }
@@ -6,14 +7,37 @@ a {
   text-decoration: none;
   color: inherit;
 }
+body {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   align-items: center;
+  background-color: rgb(158, 154, 154);
+  z-index: 99;
+  position: sticky;
+  top: 0;
+}
+
+.navbar a {
   color: #fff;
-  background-color: rgb(151, 148, 148);
 }
 
 .navbar__list {
@@ -25,13 +49,29 @@ a {
   margin-left: 20px;
 }
 
-body {
-  text-align: center;
+/* Footer */
+.footer {
+  background-color: rgb(26, 22, 22);
+  color: white;
+  padding: 15px 0;
+  margin-top: auto;
 }
-a {
-  text-decoration: none;
-  color: black;
+
+.footer__content {
+  color: rgb(236, 229, 229);
 }
+
+/* Home Page */
+.home {
+  background-blend-mode: screen;
+  background-image: linear-gradient(to right bottom, rgb(128, 127, 127), rgb(105, 104, 104)), url('/public/images/landing-img.jpeg');
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Languages Page */
 .language-container {
   display: flex;
   align-items: center;
@@ -42,10 +82,7 @@ a {
   width: 50px;
   margin-left: 10px;
 }
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
+
 .language {
   display: flex;
   justify-content: space-between;
@@ -61,4 +98,15 @@ ul {
 }
 .language__text {
   margin-right: 10px;
+}
+
+.tutors__container {
+  padding: 10px 100px;
+}
+
+.tutor__container {
+  height: 150px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }

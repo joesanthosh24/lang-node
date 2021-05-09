@@ -1,4 +1,4 @@
-<%- include('../layouts/header') -%>
+<%- layout("layouts/boilerplate") %>
     <h1><%= language.name %></h1>
     <ul>
       <% for (tutor of tutors) { %>
@@ -12,5 +12,3 @@
     <footer>
       <a href="/languages">All Languages</a>
     </footer>
-  </body>
-</html>

@@ -57,7 +57,9 @@ app.get("/tutors", async (req, res) => {
 app.get("/languages/:id", async (req, res) => {
   const language = await Language.findById(req.params.id);
 
-  res.render("languages/language-show", { language });
+  const tutors = await Tutor.find({ language });
+
+  res.render("languages/language-show", { language, tutors });
 });
 
 app.get("/tutors/:id", async (req, res) => {

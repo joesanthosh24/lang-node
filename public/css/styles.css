@@ -12,6 +12,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #fafafc;
 }
 
 a {
@@ -31,7 +32,7 @@ ul {
   padding: 20px;
   align-items: center;
   background-color: rgb(158, 154, 154);
-  z-index: 99;
+  z-index: 1000;
   position: sticky;
   top: 0;
 }
@@ -100,13 +101,54 @@ ul {
   margin-right: 10px;
 }
 
+/* Tutors Page */
 .tutors__container {
   padding: 10px 100px;
 }
 
 .tutor__container {
-  height: 150px;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 350px;
+  background-color: #fff;
+  width: 900px;
+  margin: 50px auto;
+}
+
+.tutor__container a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tutor__infoContainer {
+  display: flex;
+  margin-top: auto;
+  height: 90%;
+  margin-bottom: 2%;
+}
+
+.tutor__info {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid lightgrey;
+}
+
+.tutor__details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.tutor__avatar {
+  height: 100px;
+  width: 100px;
+  margin: 10px auto;
+  border-radius: 50px;
+  background-image: url('https://images.saymedia-content.com/.image/t_share/MTc1MTEwODI2MjAwNzM2ODYz/top-10-the-most-beautiful-japanese-actresses.jpg');
+  background-position: center;
+  background-size: cover;
 }

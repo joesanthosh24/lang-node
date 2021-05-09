@@ -9,7 +9,17 @@
         </span> -->
         <div class="tutor__container">
           <a href="tutors/<%= tutor._id %>">
-            <%= tutor.name %>
+            <div class="tutor__infoContainer">
+              <div class="tutor__info">
+                <div class="tutor__avatar">
+                  
+                </div>
+                <%- tutor.name %>
+              </div>
+              <div class="tutor__details">
+                <button>Book</button>
+              </div>
+            </div>
           </a>
         </div>
       </li>

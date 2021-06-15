@@ -65,7 +65,12 @@ ul {
 /* Home Page */
 .home {
   background-blend-mode: screen;
-  background-image: linear-gradient(to right bottom, rgb(128, 127, 127), rgb(105, 104, 104)), url('/public/images/landing-img.jpeg');
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(128, 127, 127),
+      rgb(105, 104, 104)
+    ),
+    url("/public/images/landing-img.jpeg");
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -148,7 +153,14 @@ ul {
   width: 100px;
   margin: 10px auto;
   border-radius: 50px;
-  background-image: url('https://images.saymedia-content.com/.image/t_share/MTc1MTEwODI2MjAwNzM2ODYz/top-10-the-most-beautiful-japanese-actresses.jpg');
+  background-image: url("https://toppng.com/uploads/preview/blue-person-icon-blue-person-icon-115629039821nthr4gtiu.png");
   background-position: center;
   background-size: cover;
+}
+
+.button {
+  background-color: rgb(158, 154, 154);
+  border: 1px solid rgb(158, 154, 154);
+  border-radius: 15px;
+  padding: 5px 15px;
 }

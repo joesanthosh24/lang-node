@@ -1,14 +1,23 @@
 <%- layout("layouts/boilerplate") %>
-    <h1><%= language.name %></h1>
-    <ul>
-      <% for (tutor of tutors) { %>
-      <li>
-        <a href="/tutors/<%= tutor._id %>"
-          ><%= tutor.name %> - Rating: <%= tutor.rating %></a
-        >
-      </li>
-      <% } %>
-    </ul>
-    <footer>
-      <a href="/languages">All Languages</a>
-    </footer>
+<div class="language__header">
+  <img
+    class="language__header--img"
+    src="/public/images/<%= language.flagRoute %>"
+    alt="<%= language.name %>"
+  />
+  <h1><%= language.name %></h1>
+</div>
+<ul class="language__tutors">
+  <% for (tutor of tutors) { %>
+  <li class="language__tutor">
+    <a href="/tutors/<%= tutor._id %>">
+      <!-- <%= tutor.name %> - Rating: <%= tutor.rating %> -->
+      <p class="language__tutor--name"><%= tutor.name %></p>
+      <p>Rating: <%= tutor.rating %></p>
+    </a>
+  </li>
+  <% } %>
+</ul>
+<footer>
+  <a href="/languages">All Languages</a>
+</footer>

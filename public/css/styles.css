@@ -106,6 +106,43 @@ ul {
   margin-right: 10px;
 }
 
+/* Language Page */
+.language__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language__header--img {
+  height: 30px;
+  width: 30px;
+}
+
+.language__tutors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 90px;
+}
+
+.language__tutor {
+  padding: 15px;
+  width: 400px;
+  margin-top: 10px;
+  border: 1px solid rgb(158, 154, 154);
+  border-radius: 20px;
+}
+
+.language__tutor a {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.language__tutor--name {
+  font-weight: bold;
+}
+
 /* Tutors Page */
 .tutors__container {
   padding: 10px 100px;
@@ -148,6 +185,7 @@ ul {
   margin-right: 50px;
 }
 
+/* Common Components */
 .tutor__avatar {
   height: 100px;
   width: 100px;

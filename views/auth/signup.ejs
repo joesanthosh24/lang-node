@@ -32,17 +32,28 @@
       <option value="spanish">Spanish</option>
     </select>
   </div>
+  <div id="hourlyRateContainer" class="form-content hidden">
+    <label for="hourlyRate">Hourly Rate: </label>
+    <input type="text" name="hourlyRate" id="hourlyRate" />
+  </div>
   <button type="submit" class="button">Sign Up</button>
 </form>
 <script>
   const account = document.getElementById("account");
   const languageContainer = document.getElementById("languageContainer");
+  const hourlyRateContainer = document.getElementById("hourlyRateContainer");
 
   account.addEventListener("change", (e) => {
     let value = e.target.value;
 
     if (value === "teacher") {
       languageContainer.classList.remove("hidden");
+      hourlyRateContainer.classList.remove("hidden");
+    } else {
+      if (!languageContainer.classList.contains("hidden")) {
+        languageContainer.classList.add("hidden");
+        hourlyRateContainer.classList.add("hidden");
+      }
     }
   });
 </script>

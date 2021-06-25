@@ -77,6 +77,28 @@ app.get("/auth/signup", (req, res) => {
   res.render("auth/signup");
 });
 
+app.post("/auth/signup", async (req, res) => {
+  let { name, email, password, account, language, hourlyRate } = req.body;
+
+  if (account === "teacher") {
+    const tutor = new Tutor({
+      name,
+      email,
+      password,
+      rating: 0,
+      hourlyRate: Number(hourlyRate),
+    });
+    language = language.charAt(0).toUpperCase() + language.substring(1);
+    let chosenLanguage = await Language.findOne({ name: language });
+
+    tutor.language = chosenLanguage;
+    tutor.students = [];
+    await tutor.save();
+  }
+
+  res.redirect("/tutors");
+});
+
 app.get("/auth/login", (req, res) => {
   res.render("auth/login");
 });

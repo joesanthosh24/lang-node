@@ -73,6 +73,14 @@ app.get("/tutors/:id", async (req, res) => {
   res.render("tutors/tutor-show", { tutor });
 });
 
+app.get("/auth/signup", (req, res) => {
+  res.render("auth/signup");
+});
+
+app.get("/auth/login", (req, res) => {
+  res.render("auth/login");
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

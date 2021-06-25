@@ -1,18 +1,18 @@
 <%- layout("layouts/boilerplate") %>
-    <h1>Add a Course</h1>
-    <form action="/courses" method="post">
-      <div>
-        <label for="title">Title: </label>
-        <input id="title" name="course[title]" type="text" />
-      </div>
-      <div>
-        <label for="description">Description: </label>
-        <input id="description" name="course[description]" type="text" />
-      </div>
-      <div>
-        <label for="price">Price: </label>
-        <input id="price" name="course[price]" type="text" />
-      </div>
-      <button type="submit">Add Course</button>
-    </form>
-    <a href="/courses">Back to Courses</a>
+<h1>Add a Course</h1>
+<form action="/courses" method="post">
+  <div>
+    <label for="title">Title: </label>
+    <input id="title" name="course[title]" type="text" />
+  </div>
+  <div>
+    <label for="description">Description: </label>
+    <input id="description" name="course[description]" type="text" />
+  </div>
+  <div>
+    <label for="price">Price: </label>
+    <input id="price" name="course[price]" type="text" />
+  </div>
+  <button type="submit">Add Course</button>
+</form>
+<a href="/courses">Back to Courses</a>

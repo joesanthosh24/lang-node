@@ -194,6 +194,11 @@ ul {
   color: #fff;
 }
 
+/* Sign Up Page */
+#signup__text {
+  margin-bottom: 20px;
+}
+
 /* Common Components */
 .tutor__avatar {
   height: 100px;
@@ -210,4 +215,47 @@ ul {
   border: 1px solid rgb(158, 154, 154);
   border-radius: 15px;
   padding: 5px 15px;
+}
+
+button[type="submit"] {
+  background-color: #fff;
+  color: #000;
+}
+
+button[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  align-content: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  background-color: rgb(158, 154, 154);
+  color: #fff;
+}
+
+.form-content {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.form-content > label {
+  width: 25%;
+  text-align: left;
+}
+
+.form-control {
+  flex: 1;
+  outline-width: 0;
+}
+
+.hidden {
+  display: none;
 }

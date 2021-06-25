@@ -1,0 +1,48 @@
+<%- layout("layouts/boilerplate") %>
+<h1 id="signup__text">Sign Up</h1>
+<form class="form" action="/auth/signup" method="post">
+  <div class="form-content">
+    <label for="name">Name: </label>
+    <input class="form-control" id="name" name="name" type="text" />
+  </div>
+  <div class="form-content">
+    <label for="email">Email: </label>
+    <input class="form-control" id="email" name="email" type="email" />
+  </div>
+  <div class="form-content">
+    <label for="password">Password: </label>
+    <input class="form-control" type="password" name="password" id="password" />
+  </div>
+  <div class="form-content">
+    <label for="account">Account: </label>
+    <select class="form-control" name="account" id="account">
+      <option value=""></option>
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+    </select>
+  </div>
+  <div id="languageContainer" class="form-content hidden">
+    <label for="language">Language: </label>
+    <select class="form-control" name="language" id="language">
+      <option value=""></option>
+      <option value="japanese">Japanese</option>
+      <option value="chinese">Chinese</option>
+      <option value="korean">Korean</option>
+      <option value="french">French</option>
+      <option value="spanish">Spanish</option>
+    </select>
+  </div>
+  <button type="submit" class="button">Sign Up</button>
+</form>
+<script>
+  const account = document.getElementById("account");
+  const languageContainer = document.getElementById("languageContainer");
+
+  account.addEventListener("change", (e) => {
+    let value = e.target.value;
+
+    if (value === "teacher") {
+      languageContainer.classList.remove("hidden");
+    }
+  });
+</script>

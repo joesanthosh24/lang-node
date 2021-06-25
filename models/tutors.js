@@ -16,6 +16,8 @@ const TutorSchema = new Schema({
       ref: "Student",
     },
   ],
+  email: String,
+  password: String,
 });
 
 module.exports = mongoose.model("Tutor", TutorSchema);

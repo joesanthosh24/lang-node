@@ -9,6 +9,13 @@ const TutorSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Language",
   },
+  hourlyRate: Number,
+  students: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Student",
+    },
+  ],
 });
 
 module.exports = mongoose.model("Tutor", TutorSchema);

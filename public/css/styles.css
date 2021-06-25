@@ -149,7 +149,7 @@ ul {
 }
 
 .tutor__container {
-  height: 350px;
+  height: 200px;
   background-color: #fff;
   width: 900px;
   margin: 50px auto;
@@ -183,6 +183,15 @@ ul {
   align-items: center;
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.tutor__rate {
+  margin-bottom: 10px;
+}
+
+#bookButton:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /* Common Components */

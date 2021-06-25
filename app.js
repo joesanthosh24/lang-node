@@ -4,6 +4,8 @@ const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
 const path = require("path");
 
+const port = process.env.PORT || 3000;
+
 // const Course = require("./models/course");
 const Language = require("./models/language");
 const Tutor = require("./models/tutors");
@@ -71,6 +73,6 @@ app.get("/tutors/:id", async (req, res) => {
   res.render("tutors/tutor-show", { tutor });
 });
 
-app.listen(3000, () => {
-  console.log("Server listening on port 3000");
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });

@@ -14,8 +14,12 @@
               <div class="tutor__avatar"></div>
               <%- tutor.name %>
               <p>Teaches: <%= tutor.language.name %></p>
+              <% if(tutor.students.length === 0) { %>
+              <p>New, no students yet</p>
+              <% } %>
             </div>
             <div class="tutor__details">
+              <p class="tutor__rate">Hourly Rate: <%= tutor.hourlyRate %></p>
               <button id="bookButton" class="button">Book</button>
             </div>
           </div>

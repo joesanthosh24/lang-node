@@ -41,4 +41,22 @@ const signUserUp = async (req, res) => {
   res.redirect("/tutors");
 };
 
-module.exports = { goToSignUp, goToLogin, signUserUp };
+const logUserIn = async (req, res) => {
+  let { email, password } = req.body;
+
+  let user = await Tutor.findOne({ email, password });
+
+  if (user) {
+    res.redirect("/tutors");
+  } else {
+    user = await Student.findOne({ email, password });
+
+    if (user) {
+      res.redirect("/tutors");
+    } else {
+      res.redirect("/");
+    }
+  }
+};
+
+module.exports = { goToSignUp, goToLogin, signUserUp, logUserIn };
